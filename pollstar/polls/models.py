@@ -11,9 +11,16 @@ class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
+# for string fields I must do this otherwise they  will return objects
+    def __str__(self):
+        return self.question_text
+
 
 class Choice(models.Model):
     # When i delete a question all related choices will be deleted
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.choice_text
