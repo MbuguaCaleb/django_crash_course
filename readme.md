@@ -143,6 +143,13 @@ python manage.py createsuperuser
 
 ```
 
+**Creating a Django App**
+
+```
+python manage.py startapp pages
+
+```
+
 **Notes By**
 
 ```
